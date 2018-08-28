@@ -1,19 +1,12 @@
 package com.zw.springboot.config;
 
-import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 
 @Configuration
-@MapperScan("com.zw.bean")
+//@MapperScan("com.zw.bean")
+//@EnableTransactionManagement
+@ImportResource(locations = {"classpath:/mybatis/spring-mybatis.xml"})
 public class MybatisPlusConfig {
-    /**
-     * 分页插件，自动识别数据库类型
-     * @return
-     */
-    @Bean
-    public PaginationInterceptor paginationInterceptor(){
-        return new PaginationInterceptor();
-    }
+
 }
